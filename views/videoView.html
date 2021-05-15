@@ -1,0 +1,39 @@
+<!-- <!DOCTYPE HTML>
+<html>
+<body>
+
+<video src="./video_1.mp4" controls="controls">
+your browser does not support the video tag
+</video>
+
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>菜鸟教程(runoob.com)</title>
+     
+  </head>
+  <body>
+    <video
+      controls="controls"
+      id="aa"
+      oncanplaythrough="myFunction(this)"
+    ></video>
+    <input type="file" onchange="changeFile(this)" />
+    <script>
+      function myFunction(ele) {
+        //视频时长  单位秒
+        // alert(Math.floor(ele.duration));
+      }
+      function changeFile(ele) {
+        var video = ele.files[0];
+        var url = URL.createObjectURL(video);
+        console.log(url);
+        document.getElementById("aa").src = url;
+      }
+    </script>
+  </body>
+</html>
